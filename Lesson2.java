@@ -16,12 +16,12 @@ public class Lesson2 {
                 int result = method(arr);
                 System.out.println("Сумма элементов массива: "+ result);
             } catch (MyArraySizeException e) {
-                System.out.println("Размер массива превышен");
+                System.err.println("Размер массива превышен");
             }
         }
         catch (MyArrayDataException e) {
-            System.out.println("Неправильное значение элемента массива");
-            System.out.println("Ошибка в ячейке: " + (e.i+1) + "x" + (e.j+1));
+            System.err.println("Неправильное значение элемента массива");
+            System.err.println("Ошибка в ячейке: " + (e.i+1) + "x" + (e.j+1));
         }
     }
     public static int method(String[][] arr) throws MyArraySizeException, MyArrayDataException {
