@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Arrays;
 
 
 public class PhoneBook {
@@ -12,10 +13,10 @@ public class PhoneBook {
     public static void add(String name, String... phonesToAdd) {
         if(phoneBook.get(name) != null) {
             List<String> phones = new ArrayList<>(phoneBook.get(name));
-            phones.addAll(List.of(phonesToAdd));
-            phoneBook.put(name, phones);
+            phones.addAll(Arrays.asList(phonesToAdd));
+           phoneBook.put(name, phones);
         } else {
-            phoneBook.put(name, List.of(phonesToAdd));
+            phoneBook.put(name, Arrays.asList(phonesToAdd));
         }
     }
     public static void get(String name) {
